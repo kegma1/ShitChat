@@ -1,0 +1,20 @@
+{
+  "name": "basic-chatroom",
+  "version": "1.0.0",
+  "description": "a test app to se if i can make a chatroom",
+  "main": "server.js",
+  "scripts": {
+    "devStart": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "author": "Kennet Mathisen",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

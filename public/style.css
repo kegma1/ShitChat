@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#message-input {
+    position: sticky;
+    padding-left: 10px;
+    width: 50vw;
+    height: 25px;
+    font-size: 17px;
+    border: 2px solid black;
+    border-radius: 25px;
+}
+
+#send-button {
+    background-color: green;
+    color: white;
+    height: 33px;
+    width: 60px;
+    padding: 2px;
+    border: 2px solid green;
+    border-radius: 25px;
+    margin-bottom: 2px;
+}
+
+#message-container {
+    margin: auto;
+    text-align: center;
+    background:white;
+    width: 50%;
+}
+#message-container div{
+    border-radius: 25px;
+}
+#message-container div:nth-child(odd) {background: #cccccc;}
+
+/*#room-container {
+    border: 2px solid red;
+    border-radius: 25px;
+    margin-left: 15px;
+    margin-top: 15px;
+    padding:5px;
+    width: 350px;
+}*/
+#room-container {
+    margin: auto;
+    text-align: center;
+    background:white;
+    width: 50%;
+}
+#room-container div{
+    border-radius: 25px;
+    border: 1px solid black;
+    margin-top: 5px;
+}
+#room-container div:nth-child(odd) {background: #cccccc;}
+
+#room-input {
+    position: sticky;
+    padding-left: 10px;
+    width: 250px;
+    height: 25px;
+    font-size: 17px;
+    border: 2px solid black;
+    border-radius: 25px;
+}
+
+#new-room-button {
+    background-color: green;
+    color: white;
+    height: 30px;
+    width: 70px;
+    padding: 2px;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
