@@ -53,7 +53,5 @@ function appendMessage(message, con = "") {
     messageContainer.appendChild(messageElement);
   } else {
     messageContainer.appendChild(messageElement);
-  }
-
-  
+  }  
 }
