@@ -35,15 +35,25 @@ socket.on("chat-message", (data) => {
 });
 
 socket.on("user-connected", (name) => {
-  appendMessage(`${name} connected`);
+  appendMessage(`${name} connected`, "connected");
 });
 
 socket.on("user-disconnected", (name) => {
-  appendMessage(`${name} disconnected`);
+  appendMessage(`${name} disconnected`, "disconnected");
 });
 
-function appendMessage(message) {
+function appendMessage(message, con = "") {
   const messageElement = document.createElement("div");
   messageElement.innerHTML = message;
-  messageContainer.appendChild(messageElement);
+  if (con === "connected") {
+    messageElement.classList.add("connected")
+    messageContainer.appendChild(messageElement);
+  } else if (con === "disconnected") {
+    messageElement.classList.add("disconnected")
+    messageContainer.appendChild(messageElement);
+  } else {
+    messageContainer.appendChild(messageElement);
+  }
+
+  
 }

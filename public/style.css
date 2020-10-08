@@ -86,3 +86,10 @@
     border-radius: 15px;
 }
 
+.connected {
+    color: blue;
+}
+
+.disconnected {
+    color: red;
+}
