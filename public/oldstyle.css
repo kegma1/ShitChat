@@ -17,8 +17,8 @@
     position: sticky;
     padding-left: 10px;
     width: 50vw;
-    height: 35px;
-    font-size: 20px;
+    height: 25px;
+    font-size: 17px;
     border: 2px solid black;
     border-radius: 25px;
 }
@@ -26,32 +26,24 @@
 #send-button {
     background-color: green;
     color: white;
-    height: 40px;
+    height: 33px;
     width: 60px;
     padding: 2px;
     border: 2px solid green;
     border-radius: 25px;
-    margin-bottom: 4px;
-    margin-left: 10px;
+    margin-bottom: 2px;
 }
 
 #message-container {
     margin: auto;
+    text-align: center;
     background:white;
     width: 50%;
-    font-size: 20px;
 }
 #message-container div{
     border-radius: 25px;
-    border: 1px solid black;
-    padding: 5px;
-    margin: 3px;
 }
-#message-container div:nth-child(odd) {
-    background: #cccccc;
-    padding: 5px;
-    margin: 3px;
-}
+#message-container div:nth-child(odd) {background: #cccccc;}
 
 /*#room-container {
     border: 2px solid red;
@@ -63,7 +55,6 @@
 }*/
 #room-container {
     margin: auto;
-    text-align: center;
     background:white;
     width: 50%;
 }
@@ -73,6 +64,20 @@
     margin-top: 5px;
 }
 #room-container div:nth-child(odd) {background: #cccccc;}
+
+
+.notUser{
+    text-align: center;
+    padding-right: 10px;
+}
+.you {
+    text-align: right;
+    padding-right: 10px;
+}
+.other{
+    text-align: left;
+    padding-left: 10px;
+}
 
 #room-input {
     position: sticky;
@@ -95,21 +100,9 @@
 }
 
 .connected {
-    color: lime;
+    color: blue;
 }
+
 .disconnected {
     color: red;
 }
-.you {
-    text-align: right;
-    padding-right:10px;
-}
-.other{
-    text-align: left;
-    padding-left: 10px;
-}
-.notUser{
-    text-align: center;
-}
-
-

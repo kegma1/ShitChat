@@ -12,26 +12,26 @@ if (messageForm != null) {
   messageForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const message = messageInput.value;
-    appendMessage(`<b>You:</b> ${message}`);
+    appendMessage(`<b>You:</b> ${message}`, "", "you");
     socket.emit("send-chat-message", roomName, message);
     messageInput.value = "";
   });
 }
 
-socket.on("room-created", room => {
-  const roomElement = document.createElement("p")
-  roomElement.innerHTML = room
-  const roomLink = document.createElement("a")
-  roomLink.href = `/${room}`
-  roomLink.innerText = "join"
-  const roomInfo = document.createElement("div")
-  roomInfo.append(roomElement)
-  roomInfo.append(roomLink)
-  roomContainer.append(roomInfo)
-})
+socket.on("room-created", (room) => {
+  const roomElement = document.createElement("p");
+  roomElement.innerHTML = room;
+  const roomLink = document.createElement("a");
+  roomLink.href = `/${room}`;
+  roomLink.innerText = "join";
+  const roomInfo = document.createElement("div");
+  roomInfo.append(roomElement);
+  roomInfo.append(roomLink);
+  roomContainer.append(roomInfo);
+});
 
 socket.on("chat-message", (data) => {
-  appendMessage(`<b>${data.name}:</b> ${data.message}`);
+  appendMessage(`<b>${data.name}:</b> ${data.message}`, "", "other");
 });
 
 socket.on("user-connected", (name) => {
@@ -42,16 +42,17 @@ socket.on("user-disconnected", (name) => {
   appendMessage(`${name} disconnected`, "disconnected");
 });
 
-function appendMessage(message, con = "") {
+function appendMessage(message, con = "", sender = "notUser") {
   const messageElement = document.createElement("div");
   messageElement.innerHTML = message;
   if (con === "connected") {
-    messageElement.classList.add("connected")
+    messageElement.classList.add("connected", sender);
     messageContainer.appendChild(messageElement);
   } else if (con === "disconnected") {
-    messageElement.classList.add("disconnected")
+    messageElement.classList.add("disconnected", sender);
     messageContainer.appendChild(messageElement);
   } else {
+    messageElement.classList.add(sender);
     messageContainer.appendChild(messageElement);
-  }  
+  }
 }
