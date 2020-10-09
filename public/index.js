@@ -43,6 +43,7 @@ socket.on("user-disconnected", (name) => {
 });
 
 function appendMessage(message, con = "", sender = "notUser") {
+  message = formatStr(message)
   const messageElement = document.createElement("div");
   messageElement.innerHTML = message;
   if (con === "connected") {
@@ -55,4 +56,22 @@ function appendMessage(message, con = "", sender = "notUser") {
     messageElement.classList.add(sender);
     messageContainer.appendChild(messageElement);
   }
+}
+
+function formatStr(str) {
+  const arrStr = str.split(" ");
+  let sentenceLen = 0;
+  let formattedString = arrStr.reduce((newStr, curStr) => {
+    const maxLen = 50;
+    if (sentenceLen >= maxLen) {
+      newStr = newStr + "<br>" + curStr;
+      sentenceLen = 0;
+    } else {
+      newStr = newStr + " " + curStr;
+      sentenceLen += curStr.length + 1;
+    }
+    return newStr;
+  });
+
+  return formattedString;
 }
