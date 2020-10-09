@@ -12,7 +12,7 @@ if (messageForm != null) {
   messageForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const message = messageInput.value;
-    appendMessage(`<b>You:</b> ${message}`, "", "you");
+    appendMessage(`<b>You:</b><br> ${message}`, "", "you");
     socket.emit("send-chat-message", roomName, message);
     messageInput.value = "";
   });
@@ -31,7 +31,7 @@ socket.on("room-created", (room) => {
 });
 
 socket.on("chat-message", (data) => {
-  appendMessage(`<b>${data.name}:</b> ${data.message}`, "", "other");
+  appendMessage(`<b>${data.name}:</b><br>  ${data.message}`, "", "other");
 });
 
 socket.on("user-connected", (name) => {
